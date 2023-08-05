@@ -1,0 +1,115 @@
+{
+    "name": "Prabesh Bhattarai",
+    "darkMode": true,
+    "socials": [
+        {
+            "id": "1",
+            "title": "Github",
+            "link": "https://github.com/vanhanzing"
+        },
+        {
+            "id": "2",
+            "title": "LinkedIn",
+            "link": "https://www.linkedin.com/in/bhattaraiprabesh/"
+        },
+        {
+            "id": "3",
+            "title": "Email",
+            "link": "mailto:bhattaraiprabesh@gmail.com"
+        }
+    ],
+    "resume": {
+        "tagline": "👋  I'm a human being with software development Skills.",
+        "description": "I have been working as a software engineer for nearly 5 years. Experienced in Web Developer with a demonstrated history of working in the information technology and services industry. Skilled in  Front-end Development( Angular, React, Next ), Amazon Web Services (AWS Certified Developer - Associate ), NodeJs.",
+        "experiences": [
+            {
+                "id": "1",
+                "dates": "May 2022 - present",
+                "stack": "React, NodeJs, Sequlize",
+                "position": "FullStack",
+                "project": "Grow Impact",
+                "bullets": [
+                    "Experienced in creating UI components with React and integrating them with RESTful APIs built in Node.js,",
+                    "Worked with databases, like MySQL (sequelize) to implement server-side database solutions,",
+                    "Followed Agile methodologies like Scrum and Kanban to manage projects and deliver timely results."
+                ]
+            },
+            {
+                "id": "2",
+                "dates": "Janauary 2020 - April 2022",
+                "stack": "Angular, NodeJs, MongoDB, AWS",
+                "position": "FullStack",
+                "project": "Water Manager / BD Water",
+                "bullets": [
+                    "Experienced in creating UI components with Angular and integrating them with RESTful APIs built in Node.js,",
+                    "Integrated APIs for Google Maps, Stripe, and other services,",
+                    "Worked with databases like MongoDB to implement server-side database solutions,",
+                    "Simultaneously managing databases and reporting tools (Full Story, Mixpanel),",
+                    "To set up the project on AWS (Route53, CloudFront, CodePipeline, S3, Elastic BeanStalk),",
+                    "Followed Agile methodologies like Scrum and Kanban to manage projects and deliver timely results."
+                ]
+            },
+            {
+                "id": "3",
+                "dates": "May 2012 - December 2019",
+                "position": "Frontend",
+                "stack": "Angular, Nativescript",
+                "project": "Loyalty",
+                "bullets": [
+                    "Reskin/redesign the running app,",
+                    "Add continuous scrolling,",
+                    "Update the angular version and likewise packages as required,",
+                    "Add google maps, QRcode scanner, social media logins."
+                ]
+            },
+            {
+                "id": "4",
+                "dates": "March 2018 - April 2019",
+                "position": "FullStack",
+                "stack": "Angular, PHP",
+                "project": "Credi",
+                "bullets": [
+                    "Developing and maintaining the front end,",
+                    "Worked on API regarding bug fixes and file upload,",
+                    "Worked on a calculator for calculating loans, interest, repayment, and so on",
+                    "Created and generated pdf via third parties,",
+                    "Collaborated with cross-functional teams to deliver high-quality software solutions."
+                ]
+            },
+            {
+                "id": "5",
+                "dates": "April 2017 - Febuaray 2018",
+                "position": "FullStack",
+                "stack": "Angular, PHP",
+                "project": "Jeevan Vigyan",
+                "bullets": [
+                    "Creating responsive front-end designs,",
+                    "Created API for different modules using CodeIgniter Framework,",
+                    "Performed maintenance and updates to existing client Web sites,",
+                    "Identifying and correcting software deficiencies."
+                ]
+            }
+        ],
+        "education": {
+            "universityName": "Advanced College of Engineering & Management",
+            "universityDate": "2012-2016",
+            "universityPara": "Bachelor in Computer Engineering"
+        },
+        "languages": [
+            "Javascript",
+            "HTML5",
+            "CSS",
+            "MySQL"
+        ],
+        "frameworks": [
+            "Angular",
+            "React",
+            "Typescript",
+            "NodeJs"
+        ],
+        "others": [
+            "Git",
+            "AWS"
+        ]
+    }
+}
