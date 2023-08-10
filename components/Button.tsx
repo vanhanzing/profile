@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTheme } from 'next-themes';
-import data from '../data/resume.json';
 
-const Button = ({ children, onClick, classes }: any) => {
+const Button = ({ children, onClick, classes = '' }: any) => {
   const { theme } = useTheme();
 
   return (
