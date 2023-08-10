@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'signature';
+  src: url('/fonts/AccountantSignature-RpXr6.ttf') format('truetype');
+}

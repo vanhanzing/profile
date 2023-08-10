@@ -14,6 +14,17 @@ module.exports = {
       desktop: '1280px',
       laptopl: '1440px',
     },
+    extend: {
+      backgroundImage: {
+        'lightcover-darkdots': "url('/light-background.png')",
+        'darkcover-lightdots': "url('/dark-background.png')",
+        'sun-shine': "url('/sun.svg')",
+        'moon-crescent': "url('/moon.svg')",
+      },
+      fontFamily: {
+        custom: ['signature', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
