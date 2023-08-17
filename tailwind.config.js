@@ -24,6 +24,9 @@ module.exports = {
       fontFamily: {
         custom: ['signature', 'sans-serif'],
       },
+      colors: {
+        primary: '#edbe03',
+      },
     },
   },
   plugins: [],
