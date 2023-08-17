@@ -1,26 +1,31 @@
+import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import Headers from '../components/Header';
-import data from '../data/resume.json';
-import Socials from '@/components/Socials';
-import Project from '@/components/Project';
-import { useEffect, useState } from 'react';
-import Footer from '@/components/Footer';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 
-export default function Home() {
+type Props = {};
+
+const Home = (props: Props) => {
   const { theme, setTheme } = useTheme();
-  const { name, resume, darkMode } = data;
   const [mount, setMount] = useState(false);
 
   useEffect(() => {
     setMount(true);
   }, []);
 
-  useEffect(() => {
-    if (darkMode) {
-      return setTheme('dark');
+  const calculateAge = () => {
+    const birthDate = new Date('1992-04-21');
+    const currentDate = new Date();
+
+    let years = currentDate.getFullYear() - birthDate.getFullYear();
+    const months = currentDate.getMonth() - birthDate.getMonth();
+    const days = currentDate.getDate() - birthDate.getDate();
+
+    if (months < 0 || (months === 0 && days < 0)) {
+      years--;
     }
-    return setTheme('light');
-  }, [darkMode, setTheme]);
+    return years;
+  };
 
   return (
     <>
@@ -32,101 +37,67 @@ export default function Home() {
               : 'bg-lightcover-darkdots'
           }`}
         >
-          <div className="container mx-auto mb-10">
-            {<Headers />}
-            <div className="mt-10 w-full flex flex-col items-center">
-              <div
-                className={`w-full ${
-                  theme == 'dark' ? 'bg-slate-800' : 'bg-[#FAFAFA]'
-                } max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-lg`}
-              >
-                <h1 className="text-3xl font-bold">{name}</h1>
-                <h2 className="text-xl mt-5">{resume.tagline}</h2>
-                <h2 className="w-auto text-lg mt-5 opacity-50">
-                  {resume.description}
-                </h2>
-                <div className="mt-2">
-                  <Socials />
-                </div>
-                <div className="mt-5">
-                  <h1 className="text-2xl font-bold">Experience</h1>
-
-                  {resume.experiences.map(
-                    ({ id, dates, stack, position, project, bullets }) => (
-                      <Project
-                        key={id}
-                        dates={dates}
-                        stack={stack}
-                        position={position}
-                        project={project}
-                        bullets={bullets}
-                      />
-                    )
-                  )}
-                </div>
-                <div className="mt-5">
-                  <h1 className="text-2xl font-bold">Education</h1>
-                  <div className="mt-2">
-                    <h2 className="text-lg">
-                      {resume.education.universityName}
-                    </h2>
-                    <h3 className="text-sm opacity-75">
-                      {resume.education.universityDate}
-                    </h3>
-                    <p className="text-sm mt-2 opacity-50">
-                      {resume.education.universityPara}
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-5">
-                  <h1 className="text-2xl font-bold">Skills</h1>
-                  <div className="flex mob:flex-col desktop:flex-row justify-between">
-                    {resume.languages && (
-                      <div className="mt-2 mob:mt-5">
-                        <h2 className="text-lg">Languages</h2>
-                        <ul className="list-disc">
-                          {resume.languages.map((language, index) => (
-                            <li key={index} className="ml-5 py-2">
-                              {language}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {resume.frameworks && (
-                      <div className="mt-2 mob:mt-5">
-                        <h2 className="text-lg">Frameworks</h2>
-                        <ul className="list-disc">
-                          {resume.frameworks.map((framework, index) => (
-                            <li key={index} className="ml-5 py-2">
-                              {framework}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {resume.others && (
-                      <div className="mt-2 mob:mt-5">
-                        <h2 className="text-lg">Others</h2>
-                        <ul className="list-disc">
-                          {resume.others.map((other, index) => (
-                            <li key={index} className="ml-5 py-2">
-                              {other}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+          <div className="container mx-auto px-3 ">
+            <div className="w-full flex flex-col justify-center min-h-screen">
+              <div className=" flex flex-row justify-center gap-16 flex-wrap target:flex-nowrap">
+                <Image
+                  className="rounded-3xl bg-cover bg-center"
+                  src="/prabesh.JPG"
+                  height={470}
+                  width={380}
+                  alt="prabesh picture"
+                />
+                <div className="info tablet:mt-20">
+                  <h1 className=" text-7xl font-bold ">
+                    <span className="text-primary">Prabesh</span> <br />
+                    <span>Bhattarai</span>
+                  </h1>
+                  <div className="flex items-center flex-wrap  my-10 gap-16">
+                    <ul className="space-y-5">
+                      <li className="text-2xl flex">
+                        <span className=" text-gray-400 mr-4">Age:</span>{' '}
+                        {calculateAge()}
+                      </li>
+                      <li className="text-2xl flex">
+                        <span className=" text-gray-400 mr-4">
+                          Nationality:
+                        </span>
+                        Nepalese
+                      </li>
+                      <li className="text-2xl flex">
+                        <span className=" text-gray-400 mr-4">Languages:</span>{' '}
+                        Nepali, English
+                      </li>
+                    </ul>
+                    <ul className="space-y-5">
+                      <li className="text-2xl flex">
+                        <span className=" text-gray-400 mr-4">Address:</span>{' '}
+                        Kathmandu, Nepal
+                      </li>{' '}
+                      <li className="text-2xl flex">
+                        <span className=" text-gray-400 mr-4">Freelance:</span>{' '}
+                        Available
+                      </li>{' '}
+                      <li className="text-2xl flex">
+                        <span className=" text-gray-400 mr-4">LinkedIn:</span>{' '}
+                        <Link
+                          href={'https://www.linkedin.com/in/bhattaraiprabesh/'}
+                          target="_blank"
+                          className=" italic"
+                        >
+                          bhattaraiprabesh
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-            <Footer />
           </div>
         </div>
       )}
     </>
   );
-}
+};
+
+export default Home;
