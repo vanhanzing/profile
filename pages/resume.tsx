@@ -6,19 +6,12 @@ import { useEffect, useState } from 'react';
 
 export default function Resume() {
   const { theme, setTheme } = useTheme();
-  const { name, resume, darkMode } = data;
+  const { name, resume } = data;
   const [mount, setMount] = useState(false);
 
   useEffect(() => {
     setMount(true);
   }, []);
-
-  useEffect(() => {
-    if (darkMode && theme != 'light') {
-      return setTheme('dark');
-    }
-    return setTheme('light');
-  }, [darkMode, setTheme, theme]);
 
   return (
     <>

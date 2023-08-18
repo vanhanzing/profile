@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
+import data from '../data/resume.json';
 import React, { useEffect, useState } from 'react';
 
 type Props = {};
@@ -44,7 +45,6 @@ const Home = (props: Props) => {
                 <motion.div
                   animate={{ x: [100, 0] }}
                   transition={{ duration: 2 }}
-                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.8 }}
                 >
                   <Image
