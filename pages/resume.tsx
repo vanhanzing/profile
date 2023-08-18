@@ -31,7 +31,7 @@ export default function Resume() {
           }`}
         >
           <div className="container mx-auto mb-10">
-            <div className="mt-10 w-full flex flex-col items-center">
+            <div className="pt-10 w-full flex flex-col items-center">
               <div
                 className={`w-full ${
                   theme == 'dark' ? 'bg-slate-800' : 'bg-[#FAFAFA]'

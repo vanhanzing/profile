@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 
 type Props = {};
 
@@ -40,46 +41,56 @@ const Home = (props: Props) => {
           <div className="container mx-auto px-3 ">
             <div className="w-full flex flex-col justify-center min-h-screen">
               <div className=" flex flex-row justify-center gap-16 flex-wrap target:flex-nowrap">
-                <Image
-                  className="rounded-3xl bg-cover bg-center"
-                  src="/prabesh.JPG"
-                  height={470}
-                  width={380}
-                  alt="prabesh picture"
-                />
-                <div className="info tablet:mt-20">
+                <motion.div
+                  animate={{ x: [100, 0] }}
+                  transition={{ duration: 2 }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  <Image
+                    className="rounded-3xl bg-cover bg-center"
+                    src="/prabesh.JPG"
+                    height={470}
+                    width={380}
+                    alt="Picture of the developer"
+                    priority
+                  />
+                </motion.div>
+                <motion.div
+                  animate={{ y: [-100, 0] }}
+                  transition={{ ease: 'easeIn', duration: 2 }}
+                  className="info tablet:mt-20"
+                >
                   <h1 className=" text-7xl font-bold ">
                     <span className="text-primary">Prabesh</span> <br />
                     <span>Bhattarai</span>
                   </h1>
                   <div className="flex items-center flex-wrap  my-10 gap-16">
-                    <ul className="space-y-5">
-                      <li className="text-2xl flex">
-                        <span className=" text-gray-400 mr-4">Age:</span>{' '}
+                    <ul className=" space-y-5">
+                      <li className="text-2xl">
+                        <span className=" opacity-50 mr-4">Age:</span>
                         {calculateAge()}
                       </li>
-                      <li className="text-2xl flex">
-                        <span className=" text-gray-400 mr-4">
-                          Nationality:
-                        </span>
+                      <li className="text-2xl ">
+                        <span className=" opacity-50 mr-4">Nationality:</span>
                         Nepalese
                       </li>
-                      <li className="text-2xl flex">
-                        <span className=" text-gray-400 mr-4">Languages:</span>{' '}
+                      <li className="text-2xl ">
+                        <span className=" opacity-50 mr-4">Languages:</span>
                         Nepali, English
                       </li>
                     </ul>
-                    <ul className="space-y-5">
-                      <li className="text-2xl flex">
-                        <span className=" text-gray-400 mr-4">Address:</span>{' '}
+                    <ul className=" space-y-5">
+                      <li className="text-2xl">
+                        <span className=" opacity-50 mr-4">Address:</span>
                         Kathmandu, Nepal
-                      </li>{' '}
-                      <li className="text-2xl flex">
-                        <span className=" text-gray-400 mr-4">Freelance:</span>{' '}
+                      </li>
+                      <li className="text-2xl">
+                        <span className=" opacity-50 mr-4">Freelance:</span>
                         Available
-                      </li>{' '}
-                      <li className="text-2xl flex">
-                        <span className=" text-gray-400 mr-4">LinkedIn:</span>{' '}
+                      </li>
+                      <li className="text-2xl">
+                        <span className=" opacity-50 mr-4">LinkedIn:</span>
                         <Link
                           href={'https://www.linkedin.com/in/bhattaraiprabesh/'}
                           target="_blank"
@@ -90,7 +101,7 @@ const Home = (props: Props) => {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
