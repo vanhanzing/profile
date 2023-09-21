@@ -4,6 +4,8 @@ import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 import data from '../data/resume.json';
 import React, { useEffect, useState } from 'react';
+import noise from 'asm-noise';
+import CanvasWrapper from '@/components/canvas';
 
 type Props = {};
 
@@ -30,16 +32,12 @@ const Home = (props: Props) => {
   };
 
   return (
-    <>
+    <div id="app">
       {mount && (
-        <div
-          className={`bg-no-repeat bg-attach bg-center bg-fixed ${
-            theme == 'dark'
-              ? 'bg-darkcover-lightdots'
-              : 'bg-lightcover-darkdots'
-          }`}
-        >
-          <div className="container mx-auto px-3 ">
+        <>
+          <CanvasWrapper />
+
+          <div className="container mx-auto px-3 z-10 relative">
             <div className="w-full flex flex-col justify-center min-h-screen">
               <div className=" flex flex-row justify-center gap-16 flex-wrap target:flex-nowrap">
                 <motion.div
@@ -105,9 +103,9 @@ const Home = (props: Props) => {
               </div>
             </div>
           </div>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 };
 
