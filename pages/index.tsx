@@ -42,10 +42,8 @@ const Home = (props: Props) => {
           <div className="container mx-auto px-3 ">
             <div className="w-full flex flex-col justify-center min-h-screen">
               <div className=" flex flex-row justify-center gap-16 flex-wrap target:flex-nowrap">
-                <motion.div
-                  animate={{ x: [100, 0] }}
-                  transition={{ duration: 2 }}
-                  whileTap={{ scale: 0.8 }}
+                <div
+                  
                 >
                   <Image
                     className="rounded-3xl bg-cover bg-center"
@@ -55,10 +53,9 @@ const Home = (props: Props) => {
                     alt="Picture of the developer"
                     priority
                   />
-                </motion.div>
-                <motion.div
-                  animate={{ y: [-100, 0] }}
-                  transition={{ ease: 'easeIn', duration: 2 }}
+                </div>
+                <div
+                  
                   className="info tablet:mt-20"
                 >
                   <h1 className=" text-7xl font-bold ">
@@ -101,7 +98,7 @@ const Home = (props: Props) => {
                       </li>
                     </ul>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
